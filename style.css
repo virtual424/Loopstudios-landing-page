@@ -1,0 +1,349 @@
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+  --DarkGray: hsl(0, 0%, 55%);
+  --VeryDarkGray: hsl(0, 0%, 41%);
+  --font-size-base: 15px;
+  --font-family-base: "Josefin Sans", sans-serif;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+ul {
+  padding-left: 0;
+}
+
+.hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 92%;
+  padding: 2.2em 2em;
+}
+
+.hero-text {
+  border: 2px solid var(--White);
+  color: var(--White);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-light);
+  padding: 0.5em;
+  text-align: start;
+  margin: 0 auto;
+  transform: translateY(65%);
+  max-width: 750px;
+  overflow-wrap: break-word;
+}
+
+.menu {
+  cursor: pointer;
+}
+
+.interactiveVR {
+  padding: 7em 2em;
+  padding-bottom: 5.2em;
+}
+
+.VRImg {
+  margin-bottom: 3.5em;
+}
+
+.interativeVRDesc {
+  text-align: center;
+  padding: 0 1em;
+  background-color: white;
+}
+
+.interativeVRDesc > h1 {
+  font-weight: var(--font-weight-light);
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+.interativeVRDesc > p {
+  color: var(--DarkGray);
+  line-height: 1.5em;
+  font-weight: var(--font-weight-medium);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 45%;
+}
+
+.creations {
+  text-align: center;
+  padding: 0 1em;
+  margin-bottom: 5em;
+}
+
+.creations > h1 {
+  font-size: 2rem;
+  font-weight: var(--font-weight-light);
+  text-transform: uppercase;
+  margin-bottom: 1.5em;
+}
+
+.creations > div {
+  background-size: cover;
+  height: 120px;
+  padding: 1.2em;
+  margin-bottom: 1.5em;
+  position: relative;
+  cursor: pointer;
+}
+
+.creations > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0); /* Transparent initially */
+  transition: background-color 0.3s ease; /* Smooth transition */
+  z-index: 0; /* Places overlay below the text */
+}
+
+.creations > div:hover::before {
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white overlay */
+}
+
+.creations > div > p {
+  text-transform: uppercase;
+  color: var(--White);
+  font-weight: var(--font-weight-light);
+  position: absolute;
+  font-size: 1.6rem;
+  bottom: 0.5em;
+  text-align: start;
+}
+
+.creations > div:hover > p {
+  color: var(--Black);
+}
+
+.creations > button {
+  border: 1px solid var(--Black);
+  padding: 0.7em 2em;
+  background-color: var(--White);
+  text-transform: uppercase;
+  font-family: "Alata", sans-serif;
+  letter-spacing: 0.5em;
+  margin-top: 1.2em;
+  cursor: pointer;
+}
+
+.creations > button:hover {
+  background-color: var(--Black);
+  color: var(--White);
+}
+
+.footer {
+  background-color: var(--Black);
+  padding: 4em 3em;
+}
+
+.footerOptions {
+  color: var(--White);
+  text-align: center;
+  margin: 3em auto;
+}
+
+.footerOptions > li {
+  padding-bottom: 0.7em;
+}
+
+.social {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.trademark {
+  color: var(--DarkGray);
+  margin-top: 1.9em;
+}
+
+.menuList {
+  color: var(--White);
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-top: 6em;
+}
+
+.menuList > li {
+  margin-bottom: 1em;
+}
+
+.desktopMenu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: var(--font-weight-regular);
+  margin-top: 0;
+  gap: 1.2em;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  display: none;
+}
+
+.desktopMenu > li {
+  margin-bottom: 0;
+  padding-bottom: 0.2em;
+}
+
+.desktopMenu > li:hover {
+  border-bottom: 1px solid var(--White);
+}
+
+.invisible {
+  display: none;
+}
+
+.footerOptions > li:hover {
+  border-bottom: 1px solid var(--White);
+}
+
+@media screen and (min-width: 895px) {
+  .desktopMenu {
+    display: flex;
+  }
+
+  .creations {
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    padding: 0 6em;
+  }
+
+  .creations > h1 {
+    grid-column: span 2;
+    margin-bottom: 0;
+    order: -1;
+    font-size: 2.5rem;
+    text-align: start;
+  }
+
+  .creations > div {
+    margin: 0;
+    height: 450px;
+    padding: 2.5em;
+  }
+
+  .creations > div > p {
+    bottom: 1.2em;
+  }
+
+  .creations > button {
+    grid-column: span 2;
+    margin-top: 0;
+    order: -1;
+    grid-column-start: 4;
+    width: 60%;
+    margin: 0 auto;
+    margin-right: 0;
+    margin-bottom: 4em;
+  }
+
+  .interactiveVR {
+    padding: 12em;
+    display: flex;
+    position: relative;
+  }
+
+  .interativeVRDesc {
+    position: absolute;
+    width: 47%;
+    right: 7%;
+    top: 40%;
+    padding: 7em;
+  }
+
+  .interativeVRDesc > h1 {
+    font-size: 3rem;
+    text-align: start;
+  }
+
+  .interativeVRDesc > p {
+    font-size: 1rem;
+    text-align: start;
+  }
+
+  .hero {
+    padding: 2.2em 8em;
+  }
+
+  .hero-text {
+    max-width: 750px;
+    margin-top: -9%;
+    margin-left: 0;
+    font-size: 5rem;
+    overflow-wrap: break-word;
+  }
+
+  .menuBtn {
+    display: none;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 9em;
+  }
+
+  .leftFooter {
+    flex: 0.6;
+  }
+
+  .leftFooter > .logo {
+    margin: 0;
+    text-align: start;
+  }
+
+  .footerOptions {
+    /* margin-top: 1.9em;
+    margin-bottom: 0; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6%;
+  }
+
+  .social {
+    margin-right: 0;
+  }
+}
